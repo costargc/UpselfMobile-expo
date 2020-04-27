@@ -123,7 +123,7 @@ const BottomBarNavigator = createMaterialBottomTabNavigator(
   {
     //Render the splash screen on app load, which redirects to menu after 2 seconds
     initialRouteName: "Menu",
-    resetOnBlur: true,
+    resetOnBlur: false,
     navigationOptions: {
       gesturesEnabled: false
     },

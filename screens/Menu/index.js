@@ -114,7 +114,7 @@ export default class Menu extends Component {
           }}
         >
           <Swiper
-            // loop = {false}
+            loop = {true}
             showsPagination={true}
             // showsButtons={true}
           >

@@ -63,10 +63,10 @@ const styles = StyleSheet.create({
   },
   buttons: {
     flex: 1,
-    marginTop: 10,
-    marginBottom: 10,
-    paddingTop: 15,
-    paddingBottom: 15,
+    marginTop: 15,
+    marginBottom: 15,
+    paddingTop: 10,
+    paddingBottom: 10,
     marginLeft: 10,
     marginRight: 0,
     borderRadius: 10,
@@ -74,6 +74,8 @@ const styles = StyleSheet.create({
     borderColor: '#fff',
   },
   responseText: {
+    paddingTop: 20,
+    paddingBottom: 20,
     color: 'white',
     fontSize: 16,
     textAlign: 'center',
@@ -269,7 +271,7 @@ export default class DassResults extends Component {
               flex: 0.2,
             }}>
               <Image
-                style={{ width: 50, justifyContent: "center", aligntext: "center", alignItems: "center"}}
+                style={{ width: 50, justifyContent: "center", alignItems: "center"}}
                 source={require('../../assets/images/menu_icons/calmcloud.png')}
                 resizeMode={"contain"}
               />
@@ -322,7 +324,9 @@ export default class DassResults extends Component {
             }}>
 
               <TouchableOpacity
-                style={[styles.buttons, { backgroundColor: "#6bccf3", justifyContent: "center", aligntext: "center", alignItems: "center" }]}
+                style={[styles.buttons, 
+                  { backgroundColor: "#6bccf3", justifyContent: "center", 
+                  aligntext: "center", alignItems: "center" }]}
                 onPress={() => this.props.navigation.navigate('ComplimentChat')} >
                 <Text style={styles.responseText}> for your Depression</Text>
               </TouchableOpacity>

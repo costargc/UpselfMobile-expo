@@ -209,8 +209,9 @@ export default class CalmCloud extends Component {
 
     return (
       <View style={styles.background}>
-        <FloatingClouds />
+        
         <View style={styles.padding}>
+        <FloatingClouds />
           <Animated.Text
             style={[
               styles.topText,
