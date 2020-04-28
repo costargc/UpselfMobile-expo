@@ -109,6 +109,7 @@ export default class Memory extends Component {
 
   render() {
     return (
+   
       <View style={styles.container}>
         <Grid>
           <Col>

@@ -77,11 +77,22 @@ export default class FloatingClouds extends Component {
     let animateClouds = setInterval(() => {
       numClouds++;
       placeCloud(numClouds);
-      if (numClouds > 30) {
-        stopAnimation();
-        console.log("stop producing clouds");
+      console.log(this.state.cloudsArr.length);
+      if (numClouds > 6) {
+        
+        // this.state.cloudsArr.slice(-2,3);
+        // console.log(this.state.cloudsArr.length);
+
+        // stopAnimation();
+        // numClouds = 3;
+        this.setState({
+          cloudsArr: this.state.cloudsArr.slice(1)
+        })
+        // console.log("stop producing clouds");
+        // console.log(this.state.cloudsArr);
+
       }
-    }, 2000);
+    }, 4000);
 
     function stopAnimation() {
       clearInterval(animateClouds);

@@ -96,6 +96,7 @@ export default class Menu extends Component {
     return Promise.all(cacheImages);
   }
 
+
   render() {
     return (
       <Animated.View style={styles.background}>
@@ -167,7 +168,7 @@ export default class Menu extends Component {
             <View style={styles.navItem}>
               <View>
                 <TouchableOpacity
-                  onPress={() => this.props.navigation.navigate("CalmCloud")}
+                  onPress={() => {this.props.navigation.navigate("CalmCloud")}}
                 >
                   <Image
                     style={styles.upsyImg}

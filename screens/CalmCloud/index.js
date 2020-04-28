@@ -21,6 +21,8 @@ const win = Dimensions.get("window");
 export default class CalmCloud extends Component {
   _isMounted = false;
 
+
+
   constructor(props) {
     super(props);
     //Prop to hold the animation value of the stressballs height and width
@@ -125,6 +127,39 @@ export default class CalmCloud extends Component {
       if (this.state.instructionsPosition < 9) {
         this.animateInstructions();
       }
+      else {
+
+        setTimeout(() => {
+
+          this.setState({
+            instructionText: "",
+            instructionsPosition: 0,
+            animationStarted: false,
+          });
+
+          input = null;
+          goButton = null;
+
+          this.setState({
+            inputValue: "",
+       
+          })
+          text=null;
+
+
+          Animated.timing(this.topTextOpacity, {
+            toValue: 1,
+            duration: 200,
+            easing: Easing.ease,
+            useNativeDriver: true
+          }).start();
+
+
+
+        }, 10000);
+
+
+      }
     });
   };
 
@@ -151,9 +186,15 @@ export default class CalmCloud extends Component {
     });
   };
 
+  forceMethod() {
+    this.forceUpdate();
+  }
+
   render() {
+
     let topText = <Text style={styles.topText}></Text>;
     let input = (
+    
       <TextInput
         //{...props} // Inherit any props passed to it; e.g., multiline, numberOfLines below
         editable
@@ -175,8 +216,10 @@ export default class CalmCloud extends Component {
           style={styles.button}
           onPress={() => this.handleStressBallAnimation()}
         >
+          
           Go!
         </Button>
+        
       );
     }
     let animateText;
@@ -185,6 +228,7 @@ export default class CalmCloud extends Component {
       input = null;
       goButton = null;
       animateText = (
+        
         <AnimatedImage
           style={[
             styles.stressBall,
@@ -203,15 +247,17 @@ export default class CalmCloud extends Component {
           resizeMode={"contain"}
         >
           <Text style={styles.stressText}>{this.state.inputValue}</Text>
+          
         </AnimatedImage>
       );
     }
 
     return (
-      <View style={styles.background}>
-        
-        <View style={styles.padding}>
-        <FloatingClouds />
+      <View style={styles.background} >
+
+
+        <View style={styles.padding} >
+
           <Animated.Text
             style={[
               styles.topText,
@@ -219,6 +265,7 @@ export default class CalmCloud extends Component {
                 opacity: this.topTextOpacity
               }
             ]}
+            
           >
             Tap the screen to type in something that is causing you stress
           </Animated.Text>
@@ -236,6 +283,7 @@ export default class CalmCloud extends Component {
             {this.state.instructionText}
           </Animated.Text>
           {goButton}
+          <FloatingClouds />
         </View>
       </View>
     );
