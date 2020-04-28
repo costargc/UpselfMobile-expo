@@ -79,7 +79,6 @@ export default class FloatingClouds extends Component {
       placeCloud(numClouds);
       // console.log(this.state.cloudsArr.length);
       if (numClouds > 6) {
-        
         // this.state.cloudsArr.slice(-2,3);
         // console.log(this.state.cloudsArr.length);
 
